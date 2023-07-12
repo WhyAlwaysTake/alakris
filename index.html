@@ -16,7 +16,7 @@
                 <label id = "headerLabel" v-for="(item, index) in header" :key="item">{{item}}</label>
             </div>
             <button id = "headerButtonDemo">{{header_demo}}</button>
-            <button id = "headerButtonTry">{{header_try}}</button>
+            <a id = "headerButtonTry"  href = "business.html">{{header_try}}</a>
         </div>
         <div id = "center" v-if="page">
             <div id = "centerRight">
@@ -24,10 +24,10 @@
                 <div id = "centerList">
                     <label id = "centerListLabel" v-for="list in center">{{list}}</br></label>
                 </div>
-                <button id = "centerButton">{{header_demo}}</button>
+                <button id = "centerButton" @click= "changePage(false)">{{header_demo}}</button>
             </div>
             <div id="centerLeft">
-                <img src="./Resources/main.jpg">
+                <img src="./Resources/main.png">
             </div>
         </div>
         <div id = "bottom" v-if="page">
@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div id = "advantages">
+        <div id = "advantages" v-if = "page">
             <div id = "advantagesTop">
                 <label id = "advantagesTopHeadline">{{advantages_headline}}</label>
                 <label id = "advantagesTopLabel">{{advantages_label}}</label>
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div id = "video">
+        <div id = "video" v-if = "page">
             <div id = "videoTop">
                 <label id = "videoTopHeadline">{{video_headline}}</label>
                 <label id = "videoTopLabel">{{video_label}}</label>
@@ -86,7 +86,7 @@
             </div>
             <label id = "videoBottomL">{{video_bottom}}</label>
         </div>
-        <div id = "clients">
+        <div id = "clients" v-if = "page">
             <div id = "clientsTop">
                 <label id = "clientsTopHeadline">{{clients_headline}}</label>
                 <label id = "clientsTopLabel">{{clients_label}}</label>
